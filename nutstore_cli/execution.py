@@ -102,6 +102,8 @@ class ExecutionVisitor(NodeVisitor):
 
     def visit_upload(self, node, children):
         local_path = to_str(children[2].text)
+        print children
+        print local_path
         remote_path = self.context.client.upload(local_path)
         output.echo(remote_path)
 
