@@ -37,6 +37,7 @@ class BaseNutStoreClient(object):
         remote_path = join(directory, name)
         output.debug('[UPLOAD] {0} => {1}'.format(local_path, remote_path))
         self._client.upload(local_path, self._to_real_path(remote_path))
+        print name, directory, remote_path
         return remote_path
 
     def download(self, remote_path, local_path=None):
